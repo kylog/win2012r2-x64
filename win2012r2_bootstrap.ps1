@@ -48,8 +48,3 @@ if ($path -contains $gitpath) {
     [void]$path.Remove($gitpath)
 }
 [Environment]::SetEnvironmentVariable("Path", $path -join ";", [System.EnvironmentVariableTarget]::Machine)
-
-# Figure out how to set the keyboard to Dvorak
-Set-ItemProperty -Path "Microsoft.PowerShell.Core\Registry::HKEY_USERS\.DEFAULT\Keyboard Layout\Preload" -Name 1 -Value 00010409
-Set-ItemProperty -Path "HKCU:\Keyboard Layout\Preload" -Name 1 -Value 00010409
-
